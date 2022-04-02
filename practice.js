@@ -14,3 +14,13 @@ function pbr(){
 
 //pbr();
 
+
+function testingPromise(path, callback){
+    let script = document.createElement('script');
+    script.src = path;
+    document.head.append(script);
+
+    script.onload = () => callback();
+}
+
+//testingPromise("./js/script.js", () => {cd(sum(5, 5))});
