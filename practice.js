@@ -58,6 +58,7 @@ sumPromise.catch(x => cc(x));*/
 
 // TODO Return to this
 
+// Chained then statements after single async promise.
 /*
 new Promise((resolve, reject) => {
    resolve(1);
@@ -69,4 +70,21 @@ new Promise((resolve, reject) => {
     cc(result * 2);
 });*/
 
+// Chained async promises
+/*new Promise((resolve, reject) => {
+    resolve(1);
+}).then((result) => {
+    new Promise((resolve, reject) => {
+        resolve(result * 2);
+    }).then((result) => {
+        cc(result);
+    })
+});*/
+
+
+/*new Promise((resolve, reject) => {
+   resolve(5);
+})  .then(sum => sum + 5)
+    .then(sum => sum + 5)
+    .then(sum => cc(sum + 5));*/
 
