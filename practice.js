@@ -5,7 +5,6 @@ var cd = (val) => {
     elem.innerHTML = val;
 }
 
-
 function pbr(){
     let x = 5;
     let y = x;
@@ -25,17 +24,19 @@ function sumReturn(a, b){
 }
 
 
-function testingPromise(path, callback) {
+/*function testingCB(path, callback) {
     let script = document.createElement('script');
     script.src = path;
     document.head.append(script);
 
+    cc(callback);
     script.onload = () => callback();
     script.onerror = () => { let x = new Error("Script loading failed."); cc(x); }
 
-    //testingPromise(path, () => {} );
+    //testingCB(path, () => {} );
 }
-//testingPromise("./js/script.js", () => {cd(sum(5, 5))});
+testingCB("./js/script.js", () => { cd(sum(5, 5)) });*/
+//TODO Doesn't work without cd in the function call. Ask Blue.
 
 
 /*let sumPromise = new Promise((resolve, reject) => {
@@ -88,3 +89,29 @@ new Promise((resolve, reject) => {
     .then(sum => sum + 5)
     .then(sum => cc(sum + 5));*/
 
+
+/*new Promise((resolve, reject) => {
+    if (true) {
+        throw new Error("Stuff");
+    }
+}).catch(error => cc(error.message));*/
+
+/*
+Promise.all([
+    new Promise(resolve => CBHere),
+    new Promise(resolve => ),
+    new Promise(resolve => ),
+]).then(cc(resolve));*/
+
+
+/*
+async function f() {
+    let delayTest = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Duh"), 1000);
+    });
+
+    let result = await delayTest; // wait until the promise resolves (*)
+    alert(result); // "done!"
+}
+
+f();*/
